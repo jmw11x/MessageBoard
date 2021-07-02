@@ -9,7 +9,7 @@ flutter code in master branch All files are there can download and run on emulat
 
 Some registered users you can login with,
 
-deadhead@gmail.com  123345
+deadhead@gmail.com  123456
 bobw@gmail.com 123456
 
 Or just register as a new user :)
