@@ -1,0 +1,121 @@
+table, tr{
+  margin: 100px;
+}
+  body.boards{
+    background-color: rgb(166, 210, 247);
+  }
+  ul.a{
+    list-style-type:lower-greek;
+    font-size: 40px;
+    position: absolute;
+    left: 400px;
+  }
+  li{
+    margin: 50px 0;
+    transition: transform .2s;
+
+  }
+
+  li:hover{
+    cursor: pointer;
+    background-color: crimson;
+    transform: scale(1.5);
+  }
+  .actionbtn {
+     width: 70px;
+     height: 70px;
+     background-color: red;
+     border-radius: 50%;
+     box-shadow: 0 6px 10px 0 #666;
+     transition: all 0.1s ease-in-out;
+   
+     font-size: 50px;
+     color: white;
+     text-align: center;
+     line-height: 70px;
+   
+     position: fixed;
+     right: 50px;
+     bottom: 50px;
+  }
+   
+  .actionbtn:hover {
+     box-shadow: 0 6px 14px 0 #666;
+     transform: scale(1.05);
+  }
+   
+  .form_login{
+      position: relative;
+      left: 600px;
+      top: 300px;
+  }
+  .form_register{
+    position: relative;
+    left: 600px;
+    top: 300px;
+}
+  .magic{
+    position:  fixed;
+    width: 100%;
+    color: wheat;
+    height: 100vh;
+    z-index: 200;
+    background-image: url('./jacobwilson.png');
+    text-align: center;
+    align-items: center;
+    line-height: 90vh;
+  }
+
+  .magic.display-none{
+    position:  fixed;
+    opacity: 0;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    z-index: -10;
+    background-image: url('./jacobwilson.png');
+    text-align: center;
+    line-height: 90vh;
+  }
+  @keyframes fadeIn {
+      to{
+          opacity: 1;
+      }
+  }
+
+  .fade-in{
+      opacity: 0;
+      animation: fadeIn ease-in forwards;
+  }
+
+  a {
+    color: rgb(12, 12, 12);
+  }
+  
+a:hover {
+  color: blue;
+  cursor:pointer;
+}
+img{
+  cursor: pointer;
+}
+img.settings:hovor{
+  cursor: pointer;
+}
+a:active {
+  background-color: black;
+}
+
+a:visited {
+  background-color: #ccc;
+}
+
+h1.tmb{
+  background-color: darkblue;
+  color: beige;
+}
+h1.sports_b{
+  background-color: darkblue;
+  color: beige;
+}

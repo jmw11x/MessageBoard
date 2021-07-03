@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <style>
+        body {
+          font-family: "Lato", sans-serif;
+        }
+        
+        .sidenav {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: rgb(141, 128, 128);
+          overflow-x: hidden;
+          transition: 0.5s;
+          padding-top: 60px;
+        }
+        
+        
+   
+        .sidenav .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+        
+        @media screen and (max-height: 450px) {
+          .sidenav {padding-top: 15px;}
+          .sidenav a {font-size: 18px;}
+        }
+        </style>
+
+    
+
+    <title>Forms for cool stuff</title>
+</head>
+
+
+
+
+<body class = "boards">
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <img onclick = "window.open('settings.html', '_self')" src="settings.jpg" alt="" class = "settings">
+
+        <img onclick = "window.open('boards.html', '_self')" src="home.png" alt="" class = "settings">
+        <br>
+        Profile:<img onclick = "window.open('profile.html', '_self')" src="prof.jpg" alt="" class = "settings">
+
+      </div>
+
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+      
+      <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+      </script>
+         
+
+
+
+
+    <h1 class = "tmb">The important things</h1>
+
+
+
+
+        <ul class = "a">
+            <li onclick="loadmain()"><img src="./mainchat.png" alt="">Main Chat</li>
+            <li onclick="loadcode()"><img src="./heros.jpg" alt="">Lets talk programming</li>
+            <li onclick="loadsports()"><img src="./sports.jpg" alt="">Sports</li>
+            <li onclick="loadmusic()"><img src="./music.jpg" alt="">Music</li>
+            <li onclick="loadgames()"><img src="./games.jpg" alt="">Games</li>
+        </ul>
+        
+        <script>
+            function loadmain(){
+                window.open('themainboard.html', '_self');
+            }
+            function loadsports(){
+                window.open('sports.html', '_self');
+            }
+            function loadcode(){
+                window.open('code.html', '_self');
+            }
+            function lodemusic(){
+                window.open('music.html', '_self');
+            }
+            function loadgames(){
+                window.open('games.html', '_self');
+            }
+        </script>
+</body>
+</html>
