@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+  
     <style>
         body {
           font-family: "Lato", sans-serif;
@@ -53,6 +53,7 @@
     <title>profile</title>
 </head>
 <body>
+
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <img onclick = "window.open('settings.html', '_self')" src="settings.jpg" alt="" class = "settings">
@@ -75,6 +76,10 @@
       }
       </script>
     <h1>Profile page</h1>
+
+    <table>
+        <th>Socail medias added</th>
+    </table>
     <!--Do we show socials here? where?-->
     <div class="forms">
         <div class="innerf">
@@ -91,17 +96,22 @@
             <button onclick="setsocial()">reset social media</button>
         </div>
     </div>
-    <a href='' id = 'soc'>Social Media For me</a>
+    <a href='javascript:getsocial();'  id = 'soc'>Social Media <img src="./sociallink.jpg" alt=""></a>
 
 
     <script>
-        function getsocial(){
+        function onlo(){
+            var ahref= getsocial();
+            document.getElementById('soc').setAttribute("href", ahref);
+        }
+        async function getsocial(){
             var user = admin.currentUser.uid;
-
+            var social = '';
             var doc = db.collection('users').doc(user);
-            doc.get().then((doc) => {
+            await doc.get().then((doc) => {
                 if (doc.exists) {
                     var data=doc.data();
+                    social=data;
                     document.getElementById("soc").setAttribute("href",data.social);
                 } else {
                     // doc.data() will be undefined in this case
@@ -110,9 +120,8 @@
             }).catch((error) => {
                 console.log("Error getting document:", error);
             });
-            return '';
+            return social;
         }
-
     </script>
     <script>
         function setemail(){
