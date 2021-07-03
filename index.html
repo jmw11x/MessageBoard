@@ -69,7 +69,7 @@
         function googlesi(){
             const goog = new firebase.auth.GoogleAuthProvider();
             admin.signInWithPopup(goog).then(() =>{
-                window.open('home.html', '_self');
+                window.open('boards.html', '_self');
             })
             .catch(error =>{
                 alert('google sign in rejected');
