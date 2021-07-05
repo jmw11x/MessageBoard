@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jwilson177hw1/services/adminalert.dart';
 import 'package:jwilson177hw1/services/auth.dart';
+import 'package:link_text/link_text.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key? key}) : super(key: key);
@@ -12,6 +13,7 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   String uid = '';
   String firstName = '';
+  String social = "";
   String lastName = '';
   @override
   Widget build(BuildContext context) {
@@ -21,6 +23,10 @@ class _ProfileState extends State<Profile> {
     Future<String> uzr = db.currentuid();
     uzr.then((value) => setState(() {
           uid = value;
+        }));
+    Future<String> soc = db.getsocial();
+    soc.then((value) => setState(() {
+          social = value;
         }));
     return Scaffold(
       backgroundColor: Colors.blueGrey[100],
@@ -51,7 +57,11 @@ class _ProfileState extends State<Profile> {
                   child: Text('Reset Name'),
                   onPressed: () async {
                     await db.updateProfile(firstName, uid, lastName);
-                  })
+                  }),
+              LinkText(
+                social,
+                textAlign: TextAlign.center,
+              ),
             ],
           ),
         ),
