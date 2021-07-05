@@ -21,6 +21,14 @@ class AdminAlert {
     return name;
   }
 
+  Future<String> getsocial() async {
+    FirebaseUser uid = await _auth.currentUser();
+    String user_id = uid.uid.toString();
+    DocumentSnapshot ds = await users.document(user_id).get();
+    String name = ds.data['social'].toString();
+    return name;
+  }
+
   Future<String> currentuid() async {
     FirebaseUser uid = await _auth.currentUser();
     String user_id = uid.uid.toString();
@@ -107,7 +115,7 @@ class AdminAlert {
   }
 
   Future updatesocial(String social, String current) async {
-    await Firestore.instance.collection(current).document().updateData({
+    await Firestore.instance.collection('users').document(current).updateData({
       'social': social,
     });
   }
